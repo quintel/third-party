@@ -33,7 +33,7 @@ def Plot_heatmap(df):
     
     df.fillna(0,inplace = True)
     plt.figure(figsize = (7,4), dpi = 600) 
-    sn.heatmap(df.round(1),yticklabels=yticks,xticklabels=xticks, annot=True,square = False, 
+    sn.heatmap(df.round(2),yticklabels=yticks,xticklabels=xticks, annot=True,square = False, 
                 linecolor = 'k', linewidths=.25, fmt='g', cbar  = False)
     plt.yticks(rotation=0) 
     plt.ylabel("Number of threads", fontsize = 12)
@@ -46,4 +46,7 @@ def Plot_heatmap(df):
 df = pd.read_csv(r'.\Results\result.csv', header = None)
 df.columns = df.columns + 1
 df.index = df.index + 1
+for i, col in enumerate(df.columns):
+    df[col] = df[col]/(i+1)
+
 Plot_heatmap(df)
