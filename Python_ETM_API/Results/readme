@@ -1,0 +1,6 @@
+Result.csv
+
+columns: 1 to 10 tasks to perform
+rows: 1 to 10 threads/workers performing these tasks
+
+Time shown is the average over 10 cycles. 
